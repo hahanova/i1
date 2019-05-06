@@ -1,27 +1,33 @@
 <template>
   <section class="home-menu">
-      <ul class="home-menu__list">
-        <li class="home-menu__option"><a href="./mainCourses.html" class="home-menu__link" title="Первые блюда">Первые блюда</a></li>
-        <li class="home-menu__option"><a href="#" class="home-menu__link" title="Вторые блюда">Вторые блюда</a></li>
-        <li class="home-menu__option"><a href="#" class="home-menu__link" title="Пироги">Пироги</a></li>
-        <li class="home-menu__option"><a href="#" class="home-menu__link" title="Десерты">Десерты</a></li>
-        <li class="home-menu__option"><a href="#" class="home-menu__link" title="Соусы">Соусы</a></li>
-      </ul>
-    </section>
+    <ul class="home-menu__list">
+      <li v-for="(item, index) in menu" v-bind:key="index" class="home-menu__option">
+        <router-link :to="item.href" class="home-menu__link" :title="item.name">
+          {{ item.name }}
+        </router-link>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'H',
+  name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      menu: [
+        { name: 'Первые блюда', href: '/main_courses' },
+        { name: 'Вторые блюда', href: '/second_courses' },
+        { name: 'Пироги', href: '/pies' },
+        { name: 'Десерты', href: '/desserts' },
+        { name: 'Соусы', href: '/sauses' },
+      ],
     }
-  }
+  },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import './home';
+@import "./home";
 </style>
