@@ -2,38 +2,30 @@
   <section class="plp">
     <article
       class="plp__item"
-      v-for="(dishes, idx) in dishes"
+      v-for="(dish, idx) in dishes"
       :key="idx"
     >
-      <div class="plp__picture">
-        <img :src="dishes.src" :alt="dishes.name">
-      </div>
-      <div class="plp__name">{{ dishes.name }}</div>
+      <router-link
+        :to="`/${type}/${idx}`"
+        class="home-menu__link"
+        :title="dish.name"
+      >
+        <div class="plp__picture">
+          <img :src="dish.src" :alt="dish.name" />
+        </div>
+        <div class="plp__name">{{ dish.name }}</div>
+      </router-link>
     </article>
   </section>
 </template>
 
 <script>
-import { db } from '@/db'
-
 export default {
   name: 'PLP',
-  props: ['dishes'],
+  props: ['dishes', 'type'],
   data () {
     return {
-      maincourses: [],
     }
-  },
-  mounted () {
-    db.get('dishes/').then((dishes) => {
-      console.log(dishes, this)
-      this.maincourses = dishes.maincourses
-    }).catch(err => { throw err })
-  },
-  methods: {
-    // addLocation (name, image) { // <-- новый метод
-    //   db.collection('dishes').add({ name, image })
-    // },
   },
 }
 </script>

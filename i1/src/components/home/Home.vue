@@ -16,8 +16,8 @@ export default {
   data () {
     return {
       menu: [
-        { name: 'Первые блюда', href: '/main_courses' },
-        { name: 'Вторые блюда', href: '/second_courses' },
+        { name: 'Первые блюда', href: '/maincourses' },
+        { name: 'Вторые блюда', href: '/secondcourses' },
         { name: 'Пироги', href: '/pies' },
         { name: 'Десерты', href: '/desserts' },
         { name: 'Соусы', href: '/sauses' },

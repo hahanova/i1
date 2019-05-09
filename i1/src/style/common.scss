@@ -7,6 +7,17 @@
   font-family: Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:visited,
+  &focus {
+    color: black;
+  }
+}
+
 .hidden {
   display: none !important;
 }

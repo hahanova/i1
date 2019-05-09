@@ -1,5 +1,5 @@
 <template>
-  <section class="modal hidden" id="addDishModal" ref="modal">
+  <section v-bind:class="{ hidden: isHidden, modal: true }" id="addDishModal" ref="modal">
     <div class="modal__bg"></div>
     <div class="modal__content">
       <form class="modal__form">
@@ -28,7 +28,9 @@
 export default {
   name: 'AddDishModal',
   data () {
-    return {}
+    return {
+      isHidden: true,
+    }
   },
   methods: {
   },

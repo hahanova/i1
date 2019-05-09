@@ -1,5 +1,5 @@
 <template>
-  <PLP :dishes="maincourses"></PLP>
+  <PLP :dishes="maincourses" :type="type"></PLP>
 </template>
 
 <script>
@@ -14,6 +14,7 @@ export default {
   data () {
     return {
       maincourses: [],
+      type: 'maincourses',
     }
   },
   mounted () {

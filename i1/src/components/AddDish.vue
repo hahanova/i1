@@ -13,14 +13,16 @@ export default {
   props: ['dishes'],
   data () {
     return {
+      isHidden: true,
     }
   },
 
   methods: {
-    handleClick (elem) { // <-- новый метод
+    handleClick ({target: element}) { // <-- новый метод
       console.log(1)
       // let element = this.$refs.modal.$el
-      console.log(elem)
+      console.log(element)
+      document.getElementById(element.dataset.target).removeClass('hidden')
     },
   },
 }

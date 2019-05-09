@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/home/Home'
 import MainCourses from '@/pages/MainCourses'
 import SecondCourses from '@/pages/SecondCourses'
+import Dish from '@/pages/DishPage'
 
 Vue.use(Router)
 
@@ -14,14 +15,20 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/main_courses',
+      path: '/maincourses',
       name: 'MainCourses',
       component: MainCourses,
     },
     {
-      path: '/second_courses',
+      path: '/secondcourses',
       name: 'SecondCourses',
       component: SecondCourses,
+    },
+    {
+      path: '/:dish/:id',
+      name: 'Dish',
+      component: Dish,
+      props: true,
     },
   ],
 })

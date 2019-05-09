@@ -55,3 +55,4 @@ export const users = db.get('users/').then(function (users) {
 })
 
 window.db = db;
+window.firebase = firebase;
