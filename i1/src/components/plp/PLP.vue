@@ -1,6 +1,9 @@
 <template>
   <section class="plp">
+    <title>{{ type }}</title>
+    <Loader v-bind:class="{ hidden: isHidden }"></Loader>
     <article
+      v-cloak
       class="plp__item"
       v-for="(dish, idx) in dishes"
       :key="idx"
@@ -20,9 +23,14 @@
 </template>
 
 <script>
+import Loader from '@/components/Loader'
+
 export default {
   name: 'PLP',
   props: ['dishes', 'type'],
+  components: {
+    Loader,
+  },
   data () {
     return {
     }
@@ -33,4 +41,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "./plp";
+[v-cloak] > * { display:none; }
+[v-cloak]::before {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
+}
 </style>

@@ -1,7 +1,7 @@
 .plp {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 1400px;
 
   &__item {

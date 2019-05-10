@@ -1,18 +1,17 @@
 <template>
-  <div class="not-found">
-    <title>Not Found</title>
-    <h1>О, нет 😢</h1>
+  <div class="loader-wrapper">
+    <img src="@/assets/loading.gif" alt="Loading" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NotFound',
+  name: 'Loader',
 }
 </script>
 
 <style lang="scss" scoped>
-.not-found {
+.loader-wrapper {
   display: flex;
   justify-content: center;
   height: 100vh;

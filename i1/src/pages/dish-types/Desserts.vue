@@ -1,5 +1,5 @@
 <template>
-  <PLP :dishes="secondcourses"></PLP>
+  <PLP :dishes="desserts" :type="type">></PLP>
 </template>
 
 <script>
@@ -7,19 +7,20 @@ import { db } from '@/db'
 import PLP from '@/components/plp/PLP'
 
 export default {
-  name: 'SecondCourses',
+  name: 'Desserts',
   components: {
     PLP,
   },
   data () {
     return {
-      secondcourses: [],
+      desserts: [],
+      type: 'desserts',
     }
   },
   mounted () {
     db.get('dishes/').then((dishes) => {
       console.log(dishes, this)
-      this.secondcourses = dishes.secondcourses
+      this.desserts = dishes.desserts
     }).catch(err => { throw err })
   },
 }

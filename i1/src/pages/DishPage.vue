@@ -2,7 +2,8 @@
 <template>
   <NotFound v-if="typeof dish === 'undefined'"></NotFound>
   <main v-else>
-    <section class="dish__section">
+    <title>{{ name }}</title>
+    <section class="dish__section upper-block">
       <div class="dish__img-wrapper">
         <img :src="src" :alt="name" />
       </div>
@@ -94,6 +95,10 @@ export default {
   display: flex;
 }
 
+.upper-block {
+  border-bottom: solid 1px black;
+}
+
 .dish {
   &__img-wrapper,
   &__info,
@@ -118,7 +123,6 @@ export default {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border-bottom: solid 1px black;
   }
 
   &__heading {
@@ -138,6 +142,34 @@ export default {
     &-list {
       list-style: none;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dish {
+    &__img-wrapper,
+    &__info,
+    &__ingredients,
+    &__description {
+      width: 100%;
+    }
+
+    &__ingredients {
+      padding-bottom: 0;
+    }
+
+    &__section{
+      flex-direction: column;
+    }
+
+    &__info {
+      margin: 30px 0;
+    }
+  }
+
+  .upper-block {
+    border: none;
+    flex-direction: column-reverse;
   }
 }
 </style>

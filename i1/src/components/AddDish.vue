@@ -1,5 +1,6 @@
 <template>
   <button
+    class="hidden"
     @click="handleClick"
     data-target="#addDishModal"
   >+ dish</button>
