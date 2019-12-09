@@ -22,7 +22,7 @@ export default {
         { name: 'Пироги', href: '/pies' },
         { name: 'Десерты', href: '/desserts' },
         { name: 'Напитки', href: '/drinks' },
-        { name: 'Соусы', href: '/sauses' },
+        { name: 'Соусы', href: '/sauces' },
       ],
     }
   },

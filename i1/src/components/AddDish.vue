@@ -1,8 +1,7 @@
 <template>
   <button
-    class="hidden"
     @click="handleClick"
-    data-target="#addDishModal"
+    data-target="addDishModal"
   >+ dish</button>
 </template>
 
@@ -14,7 +13,7 @@ export default {
   props: ['dishes'],
   data () {
     return {
-      isHidden: true,
+      isHidden: false,
     }
   },
 
@@ -23,7 +22,7 @@ export default {
       console.log(1)
       // let element = this.$refs.modal.$el
       console.log(element)
-      document.getElementById(element.dataset.target).removeClass('hidden')
+      document.getElementById(element.dataset.target).classList.remove('hidden')
     },
   },
 }

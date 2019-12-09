@@ -1,9 +1,8 @@
 <template>
   <section class="plp">
     <title>{{ type }}</title>
-    <Loader v-bind:class="{ hidden: isHidden }"></Loader>
+    <!-- <Loader v-bind:class="{ hidden: isHidden }"></Loader> -->
     <article
-      v-cloak
       class="plp__item"
       v-for="(dish, idx) in dishes"
       :key="idx"
@@ -32,8 +31,7 @@ export default {
     Loader,
   },
   data () {
-    return {
-    }
+    return {}
   },
 }
 </script>

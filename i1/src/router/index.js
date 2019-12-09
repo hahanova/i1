@@ -6,7 +6,7 @@ import SecondCourses from '@/pages/dish-types/SecondCourses'
 import Dish from '@/pages/DishPage'
 import Desserts from '@/pages/dish-types/Desserts'
 import Drinks from '@/pages/dish-types/Drinks'
-import Sauses from '@/pages/dish-types/Sauses'
+import Sauces from '@/pages/dish-types/Sauces'
 import Pies from '@/pages/dish-types/Pies'
 
 Vue.use(Router)
@@ -39,9 +39,9 @@ export default new Router({
       component: Drinks,
     },
     {
-      path: '/sauses',
-      name: 'Sauses',
-      component: Sauses,
+      path: '/sauces',
+      name: 'Sauces',
+      component: Sauces,
     },
     {
       path: '/pies',
