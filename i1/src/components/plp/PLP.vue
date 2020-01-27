@@ -9,7 +9,7 @@
     >
       <router-link
         :to="`/${type}/${idx}`"
-        class="home-menu__link"
+        class="plp__item-link"
         :title="dish.name"
       >
         <div class="plp__picture">

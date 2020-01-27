@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <AddDish/>
+    <!-- <AddDish/> -->
     <router-view/>
-    <AddDishModal/>
+    <!-- <AddDishModal/> -->
   </div>
 </template>
 

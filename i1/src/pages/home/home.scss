@@ -16,10 +16,10 @@
 }
 .home-menu__link{
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none !important;
   text-transform: lowercase;
   font-family: Helvetica, sans-serif;
-  color: #000;
+  color: #000 !important;
   padding: 5% 0;
   width: 100%;
 
