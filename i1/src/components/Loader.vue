@@ -16,5 +16,10 @@ export default {
   justify-content: center;
   height: 100vh;
   align-items: center;
+  transform: translateY(-10%);
+
+  & > img {
+    width: 500px;
+  }
 }
 </style>

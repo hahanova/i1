@@ -1,18 +1,19 @@
 .plp {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   max-width: 1400px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill,300px);
+  justify-content: center;
 
   &__item {
     cursor: pointer;
     flex-grow: 0;
-    margin: 50px;
-    width: 33%;
+    margin: 20px;
     padding-bottom: 30px;
+    border: solid 1px white;
 
     &:hover {
-      box-shadow: 0 0 1px #000;
+      border: solid 1px black;
       transition: .2s;
     }
   }
@@ -33,17 +34,5 @@
     text-align: center;
     margin-top: 20px;
     color: black;
-  }
-}
-
-@media screen and (min-width: 1023px) {
-  .plp__item {
-    width: 20%;
-  }
-}
-
-@media screen and (max-width: 588px) {
-  .plp__item {
-    width: 100%;
   }
 }

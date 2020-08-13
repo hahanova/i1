@@ -12,6 +12,7 @@ import Pies from '@/pages/dish-types/Pies'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

@@ -3,14 +3,15 @@
   <NotFound v-if="typeof dish === 'undefined'"></NotFound>
   <main v-else>
     <title>{{ name }}</title>
-    <section class="dish__section upper-block">
+    <Loader v-if="isLoading"></Loader>
+    <section v-else class="dish__section upper-block">
       <div class="dish__img-wrapper">
         <img :src="src" :alt="name" />
       </div>
       <div class="dish__info">
         <h1 class="dish__heading dish__heading-main">{{ name }}</h1>
         <p>время приготовления: {{ time }}</p>
-        <p>сложность: {{ difficulty }}</p>
+        <p>сложность: {{ getDifficulty(difficulty) }}</p>
       </div>
     </section>
     <section class="dish__section">
@@ -31,11 +32,13 @@
 <script>
 import { db } from '@/db'
 import NotFound from '@/components/NotFound'
+import Loader from '@/components/Loader'
 
 export default {
   name: 'Dish',
   components: {
     NotFound,
+    Loader,
   },
   data () {
     return {
@@ -46,17 +49,26 @@ export default {
       difficulty: '',
       description: '',
       src: '',
+      difficultyMap: {
+        1: 'изи-бризи',
+        2: 'нормуль',
+        3: 'сложна',
+      },
+      isLoading: true,
     }
+  },
+  methods: {
+    getDifficulty (index) { return this.difficultyMap[index] },
   },
   mounted () {
     db.get('dishes/')
       .then(dishes => {
-        const dishType = location.hash.match(/\w+/)[0]
-        const id = location.hash.match(/\w+$/)[0]
+        const dishType = location.pathname.match(/\w+/)[0]
+        const id = location.pathname.match(/\w+$/)[0]
         const dishesList = dishes[dishType]
 
         this.dish = dishesList[id]
-        console.log('this.dish', this.dish)
+
         if (!this.dish) return
 
         const {
@@ -74,6 +86,7 @@ export default {
         this.time = time
         this.difficulty = difficulty
         this.description = description
+        this.isLoading = false
       })
       .catch(err => {
         throw err
