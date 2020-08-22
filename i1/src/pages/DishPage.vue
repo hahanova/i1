@@ -64,7 +64,7 @@ export default {
     db.get('dishes/')
       .then(dishes => {
         const dishType = location.pathname.match(/\w+/)[0]
-        const id = location.pathname.match(/\w+$/)[0]
+        const id = location.pathname.match(/[\w-]+$/)[0]
         const dishesList = dishes[dishType]
 
         this.dish = dishesList[id]
