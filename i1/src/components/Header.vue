@@ -23,10 +23,11 @@ export default {
       menu: [
         { name: 'Первые блюда', href: '/maincourses' },
         { name: 'Вторые блюда', href: '/secondcourses' },
+        { name: 'Салаты', href: '/salads' },
         { name: 'Пироги', href: '/pies' },
         { name: 'Десерты', href: '/desserts' },
         { name: 'Напитки', href: '/drinks' },
-        { name: 'Соусы', href: '/sauses' },
+        { name: 'Соусы', href: '/sauces' },
       ],
     }
   },

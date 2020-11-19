@@ -23,7 +23,7 @@
       </div>
       <div class="dish__description">
         <h2 class="dish__heading">Описание:</h2>
-        <p>{{ description }}</p>
+        <p class="pre">{{ description }}</p>
       </div>
     </section>
   </main>

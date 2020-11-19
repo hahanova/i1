@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import MainCourses from '@/pages/dish-types/MainCourses'
 import SecondCourses from '@/pages/dish-types/SecondCourses'
+import Salads from '@/pages/dish-types/Salads'
 import Dish from '@/pages/DishPage'
 import Desserts from '@/pages/dish-types/Desserts'
 import Drinks from '@/pages/dish-types/Drinks'
-import Sauses from '@/pages/dish-types/Sauses'
+import Sauces from '@/pages/dish-types/Sauces'
 import Pies from '@/pages/dish-types/Pies'
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ export default new Router({
       component: SecondCourses,
     },
     {
+      path: '/salads',
+      name: 'Salads',
+      component: Salads,
+    },
+    {
       path: '/desserts',
       name: 'Desserts',
       component: Desserts,
@@ -40,9 +46,9 @@ export default new Router({
       component: Drinks,
     },
     {
-      path: '/sauses',
-      name: 'Sauses',
-      component: Sauses,
+      path: '/sauces',
+      name: 'sauces',
+      component: Sauces,
     },
     {
       path: '/pies',
