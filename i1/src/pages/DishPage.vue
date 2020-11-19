@@ -23,6 +23,8 @@
       </div>
       <div class="dish__description">
         <h2 class="dish__heading">Описание:</h2>
+        <p v-if="servingsNumber">Рецепт на: {{ servingsNumber }}</p>
+        <br>
         <p class="pre">{{ description }}</p>
       </div>
     </section>
@@ -49,6 +51,7 @@ export default {
       difficulty: '',
       description: '',
       src: '',
+      servingsNumber: '',
       difficultyMap: {
         1: 'изи-бризи',
         2: 'нормуль',
@@ -78,6 +81,7 @@ export default {
           ingredients,
           difficulty,
           description,
+          servingsNumber,
         } = this.dish
 
         this.ingredients = ingredients.split(',')
@@ -86,6 +90,7 @@ export default {
         this.time = time
         this.difficulty = difficulty
         this.description = description
+        this.servingsNumber = servingsNumber
         this.isLoading = false
       })
       .catch(err => {
